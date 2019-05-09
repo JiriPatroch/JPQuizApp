@@ -1,66 +1,74 @@
 <!DOCTYPE html>
 <html lang="cz">
 
-<head>
-    <meta charset="UTF-8">
-    <meta content="JP" name="author">
-    <meta content="TEMPLATE" name="description">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link href="/img/app/Logo1.ico" rel="shortcut icon" type="image/x-icon">
-    <link href="style/main.css" rel="stylesheet">
-    <title>JP Quiz App</title>
-</head>
-
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="JP" name="author">
+        <meta content="TEMPLATE" name="description">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
+        <link href="/img/app/Logo1.ico" rel="shortcut icon" type="image/x-icon">
+        <link href="style/main.css" rel="stylesheet">
+        <title>JP Quiz App</title>
+    </head>
 
     <body>
 
-        <main id="quiz">
+        <body>
 
-            <section class="start">
-                <h2>Nadpis</h2>
-                <button>Start</button>
-            </section>
+            <main id="quiz">
 
-            <section id="item1">
-                <h3>Otázka 1</h3>
-                <div class="options">
-                    <span>Možnost 1</span>
-                    <span>Možnost 2</span>
-                    <span>Možnost 3</span>
+                <div id="logo"></div>
+                <div id="progress-bar">
+                    <div id="progress"></div>
                 </div>
-                <button>Další</button>
-            </section>
 
-            <section id="item2">
-                <h3>Otázka 2</h3>
-                <div class="options">
-                    <span>Možnost 4</span>
-                    <span>Možnost 5</span>
-                    <span>Možnost 6</span>
-                </div>
-                <button>Další</button>
-            </section>
+                <section class="start">
+                    <h2>Nadpis</h2>
+                    <button>Start</button>
+                </section>
+
+                <section id="item1">
+                    <h3>Otázka 1</h3>
+                    <label>Vyberte prosím jednu z možností</label>
+                    <div class="options">
+                        <span>Možnost 1</span>
+                        <span>Možnost 2</span>
+                        <span>Možnost 3</span>
+                    </div>
+                    <button>Další</button>
+                </section>
+
+                <section id="item2">
+                    <h3>Otázka 2</h3>
+                    <label>Vyberte prosím jednu z možností</label>
+                    <div class="options">
+                        <span>Možnost 4</span>
+                        <span>Možnost 5</span>
+                        <span>Možnost 6</span>
+                    </div>
+                    <button>Další</button>
+                </section>
 
 
-            <section id="item3">
-                <h3>Otázka 3</h3>
-                <div class="options">
-                    <span>Možnost 7</span>
-                    <span>Možnost 8</span>
-                    <span>Možnost 9</span>
-                </div>
-                <button>Další</button>
-            </section>
+                <section id="item3">
+                    <h3>Otázka 3</h3>
+                    <label>Vyberte prosím jednu z možností</label>
+                    <div class="options">
+                        <span>Možnost 7</span>
+                        <span>Možnost 8</span>
+                        <span>Možnost 9</span>
+                    </div>
+                    <button>Další</button>
+                </section>
 
-            <section id="item4">
-                <h3>Konec</h3>
-            </section>
+                <section id="item4">
+                    <h3>Konec</h3>
+                </section>
 
-        </main>
+            </main>
 
-    </body>
-    <script src="script/main.js"></script>
+        </body>
+        <script src="script/main.js"></script>
 
-</html>
+    </html>

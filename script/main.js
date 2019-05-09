@@ -3,12 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
     (function startApp() {
 
         /**
-         * Start section constants
+         * 
+         * Initial Constants (Start Section)
+         * 
          */
         const startH2 = document.querySelector('.start h2');
         const startBtn = document.querySelector('.start button');
+        const progress = document.querySelector('#progress');
         let next = 0;
-
 
         startH2.classList = 'fadeInLeft animated';
         startBtn.classList = 'fadeIn animated slow delay-1s';
@@ -24,13 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-
+        /**
+         * 
+         * HELPERS
+         * 
+         */
         function displayNext(next) {
 
-            let nextSextionName = '#item' + next;
+            let nextSectionName = '#item' + next;
 
-            const actualSection = document.querySelector(nextSextionName);
+            const actualSection = document.querySelector(nextSectionName);
             const actualHeading = actualSection.querySelector('h3');
+            const actualLabel = actualSection.querySelector('label');
             const actualButton = actualSection.querySelector('button');
             const actualOptions = actualSection.querySelector('.options');
             const actualOption = actualSection.querySelectorAll('.options span');
@@ -40,6 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             actualHeading.style.display = 'block';
             actualHeading.classList = 'fadeIn animated delay-1s';
+            actualLabel.style.display = 'block';
+            actualLabel.classList = 'fadeIn animated delay-1s';
             actualOptions.style.display = 'flex';
 
             actualOption.forEach((element, index) => {
@@ -57,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             actualButton.addEventListener('click', () => {
 
+                progress.style.width = `${next * 33.333}%`;
                 hideCurrent(actualSection);
                 ++next
                 displayNext(next);
@@ -65,14 +75,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-
-
         function hideCurrent(currentSection) {
 
             currentSection.classList = 'fadeOutLeft animated';
 
         }
-
 
 
         /**
@@ -98,76 +105,5 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     })();
-
 })
-
-        // startBtn.addEventListener('click', () => {
-
-        //     document.querySelector('.start').classList = 'fadeOutLeft animated';
-
-        //     firstSection.style.display = 'block';
-        //     //firstSection.classList = 'fadeIn animated delay-1s';
-
-        //     firstH3.style.display = 'block';
-        //     firstH3.classList = 'fadeIn animated delay-1s';
-        //     firstOptions.style.display = 'flex';
-
-        //     firstOption.forEach((index, element) => {
-
-        //         index.classList = `fadeIn animated slow delay-` + (element + 2) + `s`;
-        //         index.innerHTML = element;
-
-        //     });
-
-        //     firstBtn.classList = 'fadeIn animated delay-5s';
-
-        //     setInterval(function () {
-        //         firstBtn.classList = 'shake animated';
-        //     }, 10000);
-
-
-
-        // });
-
-
-
-
-        // function displayNext() {
-
-
-        //     firstSection.style.display = 'block';
-
-        //     firstH3.style.display = 'block';
-        //     firstH3.classList = 'fadeIn animated delay-1s';
-        //     firstOptions.style.display = 'flex';
-
-        //     firstOption.forEach((index, element) => {
-
-        //         index.classList = `fadeIn animated slow delay-` + (element + 2) + `s`;
-        //         index.innerHTML = element;
-
-        //     });
-
-        //     firstBtn.classList = 'fadeIn animated delay-5s';
-
-        //     setInterval(function () {
-        //         firstBtn.classList = 'shake animated';
-        //     }, 10000);
-        // }
