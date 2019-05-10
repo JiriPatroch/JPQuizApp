@@ -2,11 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     (function startApp() {
 
-        /**
-         * 
-         * Initial Constants (Start Section)
-         * 
-         */
         const startH2 = document.querySelector('.start h2');
         const startBtn = document.querySelector('.start button');
         const progress = document.querySelector('#progress');
@@ -15,95 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
         startH2.classList = 'fadeInLeft animated';
         startBtn.classList = 'fadeIn animated slow delay-1s';
 
-
         startBtn.addEventListener('click', () => {
 
             document.querySelector('.start').classList = 'fadeOutLeft animated';
 
             ++next
+
             displayNext(next);
 
         });
 
-
-        /**
-         * 
-         * HELPERS
-         * 
-         */
-        function displayNext(next) {
-
-            let nextSectionName = '#item' + next;
-
-            const actualSection = document.querySelector(nextSectionName);
-            const actualHeading = actualSection.querySelector('h3');
-            const actualLabel = actualSection.querySelector('label');
-            const actualButton = actualSection.querySelector('button');
-            const actualOptions = actualSection.querySelector('.options');
-            const actualOption = actualSection.querySelectorAll('.options span');
-
-
-            actualSection.style.display = 'block';
-
-            actualHeading.style.display = 'block';
-            actualHeading.classList = 'fadeIn animated delay-1s';
-            actualLabel.style.display = 'block';
-            actualLabel.classList = 'fadeIn animated delay-1s';
-            actualOptions.style.display = 'flex';
-
-            actualOption.forEach((element, index) => {
-
-                element.classList = `fadeIn animated slow delay-` + (index + 2) + `s`;
-                selectOption(actualOption, element)
-
-            });
-
-            actualButton.classList = 'fadeIn animated delay-5s';
-
-            setInterval(function () {
-                actualButton.classList = 'shake animated';
-            }, 10000);
-
-            actualButton.addEventListener('click', () => {
-
-                progress.style.width = `${next * 33.333}%`;
-                hideCurrent(actualSection);
-                ++next
-                displayNext(next);
-
-            });
-        }
-
-
-        function hideCurrent(currentSection) {
-
-            currentSection.classList = 'fadeOutLeft animated';
-
-        }
-
-
-        /**
-         * This function will toggle the class from/to 'selected'
-         * after click on element
-         * 
-         * @param {*} actualOption Array of actual options 
-         * @param {*} element Single option element
-         * 
-         * @return {Void} Void
-         */
-        function selectOption(actualOption, element) {
-            element.addEventListener('click', (el) => {
-                console.log(el.target.innerHTML);
-
-                actualOption.forEach((element, index) => {
-                    if (element.classList.contains('selected')) {
-                        element.classList.remove('selected');
-                    }
-                });
-
-                element.classList.add('selected');
-            });
-        }
-
     })();
+
 })
